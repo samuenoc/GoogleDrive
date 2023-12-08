@@ -2,6 +2,8 @@ package com.drive.drive.repositorios;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface OfertaRepository extends JpaRepository<Ofertas, Integer> {
+import com.drive.drive.modelos.Oferta;
+
+public interface OfertaRepository extends JpaRepository<Oferta, Integer> {
 
 }

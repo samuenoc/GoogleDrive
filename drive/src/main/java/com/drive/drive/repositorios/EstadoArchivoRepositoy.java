@@ -1,5 +1,9 @@
 package com.drive.drive.repositorios;
 
-public interface EstadoArchivoRepositoy   JpaRepository<EstadoArchivo,Integer>{
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.drive.drive.modelos.EstadoArchivo;
+
+public interface EstadoArchivoRepositoy extends JpaRepository<EstadoArchivo, Integer> {
 
 }

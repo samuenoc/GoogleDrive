@@ -1,5 +1,9 @@
 package com.drive.drive.repositorios;
 
-public interface UbicacionArchivoRepository  JpaRepository <UbicacionArchivo, Integer> {
-    
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.drive.drive.modelos.UbicacionArchivo;
+
+public interface UbicacionArchivoRepository extends JpaRepository<UbicacionArchivo, Integer> {
+
 }
