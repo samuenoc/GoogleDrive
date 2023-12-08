@@ -2,8 +2,7 @@ package com.drive.drive.modelos;
 
 import java.util.Date;
 
-import org.springframework.data.annotation.Id;
-
+import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,15 +31,15 @@ public class ModificacionArchivo {
     private Date fechaModificacion;
 
     @ManyToOne
-    @JoinColumn(name = "id_tipo_modificacion", referencedColumnName = "id_modificacion", insertable = false, updatable = false)
+    @JoinColumn(name = "id_tipo_modificacion", referencedColumnName = "id_modificacion")
     private TipoModificacion tipoModificacionEntity;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario_modificador", referencedColumnName = "id_usuario", insertable = false, updatable = false)
+    @JoinColumn(name = "id_usuario_modificador", referencedColumnName = "id_usuario")
     private Usuario usuarioModificadorEntity;
 
     @ManyToOne
-    @JoinColumn(name = "id_archivo", referencedColumnName = "id_archivo", insertable = false, updatable = false)
+    @JoinColumn(name = "id_archivo", referencedColumnName = "id_archivo")
     private Archivo archivoEntity;
 
 }

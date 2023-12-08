@@ -24,14 +24,14 @@ public class FacturacionPlanes {
     private Date fechaCompra;
 
     @ManyToOne
-    @JoinColumn(name = "plan", referencedColumnName = "id_plan", insertable = false, updatable = false)
+    @JoinColumn(name = "plan", referencedColumnName = "id_plan")
     private Plan planEntity;
 
     @ManyToOne
-    @JoinColumn(name = "id_tarjeta", referencedColumnName = "id_tarjeta", insertable = false, updatable = false)
+    @JoinColumn(name = "id_tarjeta", referencedColumnName = "id_tarjeta")
     private Tarjeta tarjetaEntity;
 
     @ManyToOne
-    @JoinColumn(name = "usuario", referencedColumnName = "id_usuario", insertable = false, updatable = false)
+    @JoinColumn(name = "usuario", referencedColumnName = "id_usuario")
     private Usuario usuarioEntity;
 }

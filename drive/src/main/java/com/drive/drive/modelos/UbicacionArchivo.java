@@ -30,7 +30,7 @@ public class UbicacionArchivo {
     private int idUbicacion;
 
     @ManyToOne
-    @JoinColumn(name = "id_ubicacion_padre", referencedColumnName = "id_ubicacion", insertable = false, updatable = false)
+    @JoinColumn(name = "id_ubicacion_padre", referencedColumnName = "id_ubicacion")
     private UbicacionArchivo ubicacionPadreEntity;
 
     @OneToMany(mappedBy = "ubicacionPadreEntity")

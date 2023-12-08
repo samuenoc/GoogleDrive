@@ -47,7 +47,7 @@ public class Usuario {
     private String pais;
 
     @ManyToOne
-    @JoinColumn(name = "id_genero", referencedColumnName = "id_genero", insertable = false, updatable = false)
+    @JoinColumn(name = "id_genero", referencedColumnName = "id_genero")
     private Genero generoEntity;
 
     @OneToMany(mappedBy = "propietarioEntity")

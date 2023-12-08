@@ -37,6 +37,6 @@ public class CopiaDeSeguridad {
     private Date fechaModificacion;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario", insertable = false, updatable = false)
+    @JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
     private Usuario usuarioEntity;
 }
