@@ -5,6 +5,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,6 +15,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 @Entity
 @Table(name = "tbl_archivos")
 @Getter
@@ -29,9 +33,6 @@ public class Archivo {
     @Column(name = "nombre")
     private String nombre;
 
-    @Column(name = "id_propietario")
-    private int idPropietario;
-
     @Column(name = "fecha_creacion")
     private Date fechaCreacion;
 
@@ -41,13 +42,25 @@ public class Archivo {
     @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "ubicacion")
-    private int ubicacion;
+    @ManyToOne
+    @JoinColumn(name = "tipo_archivo", referencedColumnName = "id_tipo_archivo", insertable = false, updatable = false)
+    private TipoArchivo tipoArchivoEntity;
 
-    @Column(name = "tipo_archivo")
-    private int tipoArchivo;
+    @ManyToOne
+    @JoinColumn(name = "estado", referencedColumnName = "id_estado", insertable = false, updatable = false)
+    private EstadoArchivo estadoArchivoEntity;
 
-    @Column(name = "estado")
-    private int estado;
+    @ManyToOne
+    @JoinColumn(name = "ubicacion", referencedColumnName = "id_ubicacion", insertable = false, updatable = false)
+    private UbicacionArchivo ubicacionArchivoEntity;
 
+    @ManyToOne
+    @JoinColumn(name = "id_propietario", referencedColumnName = "id_usuario", insertable = false, updatable = false)
+    private Usuario propietarioEntity;
+
+    @OneToMany(mappedBy = "archivoEntity")
+    private List<Compartido> compartidos;
+
+    @OneToMany(mappedBy = "archivoEntity")
+    private List<ModificacionArchivo> modificaciones;
 }
