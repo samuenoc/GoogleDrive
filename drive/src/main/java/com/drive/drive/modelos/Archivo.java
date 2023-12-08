@@ -43,24 +43,24 @@ public class Archivo {
     private String descripcion;
 
     @ManyToOne
-    @JoinColumn(name = "tipo_archivo", referencedColumnName = "id_tipo_archivo", insertable = false, updatable = false)
-    private TipoArchivo tipoArchivoEntity;
+    @JoinColumn(name = "tipo_archivo", referencedColumnName = "id_tipo_archivo")
+    private TipoArchivo tipoArchivo;
 
     @ManyToOne
-    @JoinColumn(name = "estado", referencedColumnName = "id_estado", insertable = false, updatable = false)
-    private EstadoArchivo estadoArchivoEntity;
+    @JoinColumn(name = "estado", referencedColumnName = "id_estado")
+    private EstadoArchivo estadoArchivo;
 
     @ManyToOne
-    @JoinColumn(name = "ubicacion", referencedColumnName = "id_ubicacion", insertable = false, updatable = false)
-    private UbicacionArchivo ubicacionArchivoEntity;
+    @JoinColumn(name = "ubicacion", referencedColumnName = "id_ubicacion")
+    private UbicacionArchivo ubicacionArchivo;
 
     @ManyToOne
-    @JoinColumn(name = "id_propietario", referencedColumnName = "id_usuario", insertable = false, updatable = false)
-    private Usuario propietarioEntity;
+    @JoinColumn(name = "id_propietario", referencedColumnName = "id_usuario")
+    private Usuario propietario;
 
-    @OneToMany(mappedBy = "archivoEntity")
+    @OneToMany(mappedBy = "id_archivo")
     private List<Compartido> compartidos;
 
-    @OneToMany(mappedBy = "archivoEntity")
+    @OneToMany(mappedBy = "id_archivo")
     private List<ModificacionArchivo> modificaciones;
 }

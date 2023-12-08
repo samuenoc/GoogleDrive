@@ -38,11 +38,11 @@ public class Tarjeta {
     private int codigoPostal;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario_dueno", referencedColumnName = "id_usuario", insertable = false, updatable = false)
+    @JoinColumn(name = "id_usuario_dueno", referencedColumnName = "id_usuario")
     private Usuario usuarioDuenoEntity;
 
     @ManyToOne
-    @JoinColumn(name = "id_lugar", referencedColumnName = "id_lugar", insertable = false, updatable = false)
+    @JoinColumn(name = "id_lugar", referencedColumnName = "id_lugar")
     private Lugar lugarEntity;
 
 }

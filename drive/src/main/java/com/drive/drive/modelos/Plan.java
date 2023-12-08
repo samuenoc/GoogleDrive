@@ -42,7 +42,7 @@ public class Plan {
 
 
     @ManyToOne
-    @JoinColumn(name = "id_oferta", referencedColumnName = "id_oferta", insertable = false, updatable = false)
+    @JoinColumn(name = "id_oferta", referencedColumnName = "id_oferta")
     private Oferta ofertaEntity;
 
     @OneToMany(mappedBy = "planEntity")

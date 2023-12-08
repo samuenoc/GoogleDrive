@@ -1,7 +1,6 @@
 package com.drive.drive.modelos;
 
-import org.springframework.data.annotation.Id;
-
+import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,7 +29,7 @@ public class EstadoArchivo {
     private int tipoEstado;
     
     @ManyToOne
-    @JoinColumn(name = "plan", referencedColumnName = "id_plan", insertable = false, updatable = false)
+    @JoinColumn(name = "plan", referencedColumnName = "id_plan")
     private Plan planEntity;
 
 }

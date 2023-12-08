@@ -34,11 +34,11 @@ public class Lugar {
 
 
     @ManyToOne
-    @JoinColumn(name = "id_tipo_lugar", referencedColumnName = "id_tipo_lugar", insertable = false, updatable = false)
+    @JoinColumn(name = "id_tipo_lugar", referencedColumnName = "id_tipo_lugar")
     private TipoLugar tipoLugarEntity;
 
     @ManyToOne
-    @JoinColumn(name = "id_lugar_padre", referencedColumnName = "id_lugar", insertable = false, updatable = false)
+    @JoinColumn(name = "id_lugar_padre", referencedColumnName = "id_lugar")
     private Lugar lugarPadreEntity;
 
     @OneToMany(mappedBy = "lugarPadreEntity")
